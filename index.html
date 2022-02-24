@@ -12,12 +12,18 @@
     <script src="https://code.jquery.com/jquery-3.6.0.js"
         integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk=" crossorigin="anonymous"></script>
     <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js"
+        integrity="sha512-bPs7Ae6pVvhOSiIcyUClR7/q2OAsRiovw4vAkX+zJbw3ShAeeqezq50RIIcIURq7Oa20rW2n2q+fyXBNcU9lrw=="
+        crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.carousel.min.css"
+        integrity="sha512-tS3S5qG0BlhnQROyJXvNjeEM4UpMXHrQfTGmbQ1gKmelCxlSEBUaxhRBj/EFTzpbP4RVSrpEikbmdJobCvhE3g=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
     <title>Milo Divorce</title>
 </head>
 
 <body>
     <div class="container-fluid">
-        <header class="custom-header">
+        <header class="custom-header" id="header">
             <nav class="custom-nav">
                 <div class="custom-nav-left">
                     <div class="custom-menu-responsive">
@@ -27,28 +33,28 @@
                         </label>
                     </div>
                     <div class="logo">
-                        <img src="images/assets/Artboard-14.png" alt="milo-logo" />
+                        <a href="#home"><img src="images/assets/Artboard-14.png" alt="milo-logo" /></a>
                     </div>
                 </div>
                 <div class="custom-nav-right d-flex align-items-center justify-content-between">
                     <ul class="custom-nav-list">
                         <li class="custom-nav-item active">
-                            <a href="#">Home</a>
+                            <a href="#home">Home</a>
                         </li>
                         <li class="custom-nav-item">
-                            <a href="#">How can we help?</a>
+                            <a href="#help">How can we help?</a>
                         </li>
                         <li class="custom-nav-item">
-                            <a href="#">Our Process</a>
+                            <a href="#process">Our Process</a>
                         </li>
                         <li class="custom-nav-item">
-                            <a href="#">Prices</a>
+                            <a href="#pricing">Prices</a>
                         </li>
                         <li class="custom-nav-item">
-                            <a href="#">About us</a>
+                            <a href="#about">About us</a>
                         </li>
                         <li class="custom-nav-item">
-                            <a href="#">Blog</a>
+                            <a href="#blog">Blog</a>
                         </li>
 
                     </ul>
@@ -60,7 +66,7 @@
         </header>
         <section id="body" class="container-fluid">
             <div class="row">
-                <section class="col-12 first-section">
+                <section class="col-12 first-section" id="home">
                     <div class="container">
                         <div class="row">
                             <div class="col-12 col-lg-4 custom-container-1" data-aos="fade-right"
@@ -69,16 +75,15 @@
                                     <img src="images/assets/Artboard-2.png" alt="Artboard2" />
                                 </div>
                             </div>
-                            <div class="col-12 col-lg-8 custom-container-2" data-aos="fade-right"
-                                data-aos-duration="1000">
+                            <div class="col-12 col-lg-8 custom-container-2">
                                 <div class="title-content">
-                                    <div class="title-1 d-flex justify-content-start">
+                                    <div class="custom-title-1 d-flex justify-content-start">
                                         <h2>You deserve to be happy.</h2>
                                     </div>
-                                    <div class="title-2 d-flex justify-content-center">
+                                    <div class="custom-title-2 d-flex justify-content-center">
                                         <h1>We help Families</h1>
                                     </div>
-                                    <div class="title-3 d-flex justify-content-end">
+                                    <div class="custom-title-3 d-flex justify-content-end">
                                         <h2>get along & co-exist</h2>
                                     </div>
                                 </div>
@@ -111,10 +116,18 @@
                 <section class="col-12 third-section">
                     <div class="container">
                         <div class="row">
-                            <div class="col-12 d-flex justify-content-center align-items-center" data-aos="fade-right"
-                                data-aos-duration="1000">
+                            <div class="col-12 d-flex flex-column justify-content-center align-items-center"
+                                data-aos="fade-right" data-aos-duration="1000">
+                                <div class="custom-title">
+                                    <h3>Are you juggling with a lot- work, family,
+                                        social obligations</h3>
+                                </div>
                                 <div class="video-content">
                                     <img src="images/image-test-1.PNG" alt="image-test-1" />
+                                </div>
+                                <div class="custom-title">
+                                    <h3>It's hard to keep everything in the air, and sometimes
+                                        you feel like you're going to drop one.</h3>
                                 </div>
                             </div>
                         </div>
@@ -124,8 +137,8 @@
                     <div class="container">
                         <div class="row">
                             <div class="col-12 d-flex flex-column justify-content-center align-items-center"
-                                data-aos="fade-right" data-aos-duration="1000">
-                                <div class="title content">
+                                data-aos="fade-right" data-aos-duration="1000" style="position: relative;">
+                                <div class="title-content">
                                     <div class="title-1">
                                         <h3>meet our</h3>
                                     </div>
@@ -133,32 +146,61 @@
                                         <h2>therapists</h2>
                                     </div>
                                 </div>
-                                <div class="video-content d-flex align-items-center justify-content-center">
-                                    <div class="image-content align-items-center justify-content-center">
-                                        <img src="images/image-test-9.PNG" alt="image-test" />
+                                <div class="custom-slider owl-carousel">
+                                    <div class="slide-body" id="slide-1">
+                                        <div class="video-content type-1 align-items-center justify-content-center">
+                                            <div class="image-content align-items-center justify-content-center">
+                                                <video controls>
+                                                    <source src="images/video/mixkit-paddleboarder-1166.mp4"/>
+                                                </video>
+                                            </div>
+                                        </div>
+                                        <div class="people-content d-flex align-items-center justify-content-center">
+                                            <div class="people-image">
+                                                <img src="images/image-test-11.png" alt="imagetest" />
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="slide-body" id="slide-2">
+                                        <div class="video-content type-2 align-items-center justify-content-center">
+                                            <div class="image-content align-items-center justify-content-center">
+                                                <video controls>
+                                                    <source src="images/video/mixkit-palm-tree-in-front-of-the-sun-1191.mp4"/>
+                                                </video>
+                                            </div>
+                                        </div>
+                                        <div class="people-content d-flex align-items-center justify-content-center">
+                                            <div class="people-image">
+                                                <img src="images/image-test-10.png" alt="imagetest" />
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="slide-body" id="slide-3">
+                                        <div class="video-content type-3 align-items-center justify-content-center">
+                                            <div class="image-content align-items-center justify-content-center">
+                                                <video controls>
+                                                    <source src="images/video/mixkit-two-avenues-with-many-cars-traveling-at-night-34562.mp4"/>
+                                                </video>
+                                            </div>
+                                        </div>
+                                        <div class="people-content d-flex align-items-center justify-content-center">
+                                            <div class="people-image">
+                                                <img src="images/image-test-12.jpg" alt="imagetest" />
+                                            </div>
+                                        </div>
                                     </div>
                                 </div>
-                                <div class="people-content">
-                                    <div class="container">
-                                        <div class="row">
-                                            <div
-                                                class="col-12 col-lg-4 d-flex align-items-center justify-content-center">
-                                                <div class="people-image">
-                                                    <img src="images/image-test-10.png" alt="imagetest" />
-                                                </div>
-                                            </div>
-                                            <div
-                                                class="col-12 col-lg-4 d-flex align-items-center justify-content-center">
-                                                <div class="people-image active">
-                                                    <img src="images/image-test-10.png" alt="imagetest" />
-                                                </div>
-                                            </div>
-                                            <div
-                                                class="col-12 col-lg-4 d-flex align-items-center justify-content-center">
-                                                <div class="people-image">
-                                                    <img src="images/image-test-10.png" alt="imagetest" />
-                                                </div>
-                                            </div>
+                                <div class="arrow-content d-flex align-items-center justify-content-center">
+                                    <div class="arrow-body d-flex align-items-center justify-content-between">
+                                        <div class="arrow-left">
+                                            <span>
+                                                <i class="fas fa-angle-left"></i>
+                                            </span>
+                                        </div>
+                                        <div class="arrow-right">
+                                            <span>
+                                                <i class="fas fa-angle-right"></i>
+                                            </span>
                                         </div>
                                     </div>
                                 </div>
@@ -166,20 +208,20 @@
                         </div>
                     </div>
                 </section>
-                <section class="col-12 fourth-section">
+                <section class="col-12 fourth-section" id="help">
                     <div class="container">
                         <div class="row">
                             <div class="col-12">
                                 <div class="title-content d-flex justify-content-center align-items-center"
                                     data-aos="fade-up" data-aos-duration="1000">
                                     <div class="custom-content d-flex flex-column">
-                                        <div class="title-1 d-flex justify-content-start">
+                                        <div class="custom-title-1 d-flex justify-content-start">
                                             <h2>How</h2>
                                         </div>
-                                        <div class="title-2 d-flex justify-content-center">
+                                        <div class="custom-title-2 d-flex justify-content-center">
                                             <h2>can we</h2>
                                         </div>
-                                        <div class="title-3 d-flex justify-content-end">
+                                        <div class="custom-title-3 d-flex justify-content-end">
                                             <h2>help?</h2>
                                         </div>
                                     </div>
@@ -223,7 +265,7 @@
                                         </div>
                                     </div>
                                 </div>
-                                <div class="custom-card-body custom-card-image-right">
+                                <div class="custom-card-body custom-container-order-right">
                                     <div class="container">
                                         <div class="row">
                                             <div class="col-12 col-lg-6 custom-border" data-aos="fade-right"
@@ -348,7 +390,7 @@
                                         </div>
                                     </div>
                                 </div>
-                                <div class="testimonial-section testimonial-right">
+                                <div class="testimonial-section testimonial-right custom-container-order-right">
                                     <div class="container">
                                         <div class="row">
                                             <div
@@ -381,7 +423,7 @@
                         </div>
                     </div>
                 </section>
-                <section class="col-12 sixth-section">
+                <section class="col-12 sixth-section" id="process">
                     <div class="container">
                         <div class="row">
                             <div class="col-12 d-flex flex-column justify-content-center align-items-center"
@@ -422,7 +464,7 @@
                         </div>
                     </div>
                 </section>
-                <section class="col-12 seventh-section">
+                <section class="col-12 seventh-section" id="pricing">
                     <div class="container">
                         <div class="row">
                             <div class="col-12 d-flex flex-column justify-content-center align-items-center">
@@ -803,7 +845,9 @@
                                         <div class="row">
                                             <div class="col-12 col-lg-6">
                                                 <div class="title-content d-flex justify-content-center">
-                                                    <h2>FAQ's</h2>
+                                                    <div class="title-2">
+                                                        <h2>FAQ's</h2>
+                                                    </div>
                                                 </div>
                                                 <div class="image-content">
                                                     <img src="images/assets/Artboard-11.png" alt="Artboard11" />
@@ -844,14 +888,15 @@
                             </div>
                         </div>
                 </section>
-                <section class="col-12 nineth-section">
+                <section class="col-12 nineth-section" id="about">
                     <div class="container">
                         <div class="row">
                             <div class="col-12" data-aos="fade-right" data-aos-duration="1000">
                                 <div class="title-content">
                                     <div class="container">
                                         <div class="row">
-                                            <div class="col-12 col-lg-6 d-flex flex-column align-items-center justify-content-center">
+                                            <div
+                                                class="col-12 col-lg-6 d-flex flex-column align-items-center justify-content-center">
                                                 <div class="title-1">
                                                     <h3>About</h3>
                                                 </div>
@@ -872,7 +917,8 @@
                                                     <img src="images/assets/Artboard-8.png" alt="Artboard8" />
                                                 </div>
                                             </div>
-                                            <div class="col-12 col-lg-6 d-flex justify-content-center align-items-center">
+                                            <div
+                                                class="col-12 col-lg-6 d-flex justify-content-center align-items-center">
                                                 <div class="description">
                                                     <p>Milo is an online platform where people
                                                         can connect directly with therapists who
@@ -893,7 +939,7 @@
                         </div>
                     </div>
                 </section>
-                <section class="col-12 tenth-section">
+                <section class="col-12 tenth-section" id="blog">
                     <div class="container">
                         <div class="row">
                             <div class="col-12 d-flex flex-column align-items-center justify-content-center">
@@ -905,10 +951,11 @@
                                 <div class="blog-content">
                                     <div class="container">
                                         <div class="row">
-                                            <div class="col-12 col-lg-4 d-flex justify-content-center" data-aos="fade-up">
+                                            <div class="col-12 col-lg-4 d-flex justify-content-center"
+                                                data-aos="fade-up">
                                                 <div class="blog-body">
                                                     <div class="blog-title">
-                                                        <h3>Titulo</h3>
+                                                        <h3>Title</h3>
                                                     </div>
                                                     <div class="blog-text">
                                                         <p>Lorem ipsum dolor sit amet,
@@ -920,10 +967,11 @@
                                                     </div>
                                                 </div>
                                             </div>
-                                            <div class="col-12 col-lg-4 d-flex justify-content-center" data-aos="fade-up">
+                                            <div class="col-12 col-lg-4 d-flex justify-content-center"
+                                                data-aos="fade-up">
                                                 <div class="blog-body">
                                                     <div class="blog-title">
-                                                        <h3>Titulo</h3>
+                                                        <h3>Title</h3>
                                                     </div>
                                                     <div class="blog-text">
                                                         <p>Lorem ipsum dolor sit amet,
@@ -935,10 +983,11 @@
                                                     </div>
                                                 </div>
                                             </div>
-                                            <div class="col-12 col-lg-4 d-flex justify-content-center" data-aos="fade-up">
+                                            <div class="col-12 col-lg-4 d-flex justify-content-center"
+                                                data-aos="fade-up">
                                                 <div class="blog-body">
                                                     <div class="blog-title">
-                                                        <h3>Titulo</h3>
+                                                        <h3>Title</h3>
                                                     </div>
                                                     <div class="blog-text">
                                                         <p>Lorem ipsum dolor sit amet,
@@ -1039,6 +1088,7 @@
         integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p"
         crossorigin="anonymous"></script>
     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script src="js/lodash-core.min.js"></script>
     <script src="js/app.js"></script>
 </body>
 
