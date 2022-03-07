@@ -5,6 +5,9 @@
     const menu = document.querySelector('.custom-nav-list');
     const customYear = document.querySelector('#custom-year');
     const header = document.querySelector('#header');
+    const meetPerson = document.querySelectorAll('.person-item');
+    const meetVideo = document.querySelectorAll('.video-item');
+    const meetVideoItem = $('.video-item video');
 
     // Start animation components
     AOS.init();
@@ -48,21 +51,30 @@
         header.classList.toggle('sticky', window.scrollY > 50);
     });
 
+    // Meet change active person
+    _.map(meetPerson, (item, index) =>{
+        item.addEventListener('click', ()=> {
+            _.map(meetPerson, (item2, index2) => {
+                if(index2 === index) {
+                    item2.classList.add('active-image-meet');
+                    meetVideo[index2].classList.add('active-video-meet');     
+                    meetVideoItem[index2].play();   
+                } else {
+                    item2.classList.remove('active-image-meet');
+                    meetVideo[index2].classList.remove('active-video-meet');
+                    meetVideoItem[index2].pause();
+                }
+            })
+        });
+    });
+
+
     //Card Carrousel
     const slider = $('.custom-slider').owlCarousel({
-        items: 3,
+        items: 1,
         loop: true,
         onDragged: callback,
         onTranslate: callback,
-        responsive: {
-            0: {
-                items: 1,
-            },
-            991: {
-                items: 3,
-            },
-
-        }
     });
 
     const slideVideo1 = $('#slide-1 .video-content');
@@ -78,79 +90,33 @@
 
 
     // Active slider
-    if (width > 991) {
-        _.map(slideVideo1, (slide, i) => {
-            slide.classList.add('active-video-content');
-            slide.classList.remove('active-video-content-before');
-            video1[i].classList.remove('active-translate');
-            imagePerson1[i].classList.remove('active-people-image');
-            video1[i].pause();
-        });
-        _.map(slideVideo2, (slide, i) => {
-            slide.classList.remove('active-video-content');
-            slide.classList.add('active-video-content-before');
-            video2[i].classList.add('active-translate');
-            imagePerson2[i].classList.add('active-people-image');
-            video2[i].play();
-        });
-        _.map(slideVideo3, (slide, i) => {
-            slide.classList.add('active-video-content');
-            slide.classList.remove('active-video-content-before');
-            video3[i].classList.remove('active-translate');
-            imagePerson3[i].classList.remove('active-people-image');
-            video3[i].pause();
-        });
-    } else {
-        _.map(slideVideo1, (slide, i) => {
-            slide.classList.remove('active-video-content');
-            slide.classList.add('active-video-content-before');
-            video1[i].classList.add('active-translate');
-            imagePerson1[i].classList.add('active-people-image');
-            video1[i].play();
-        });
-        _.map(slideVideo2, (slide, i) => {
-            slide.classList.add('active-video-content');
-            slide.classList.remove('active-video-content-before');
-            video2[i].classList.remove('active-translate');
-            imagePerson2[i].classList.remove('active-people-image');
-            video2[i].pause();
-        });
-        _.map(slideVideo3, (slide, i) => {
-            slide.classList.add('active-video-content');
-            slide.classList.remove('active-video-content-before');
-            video3[i].classList.remove('active-translate');
-            imagePerson3[i].classList.remove('active-people-image');
-            video3[i].pause();
-        });
-    }
+    _.map(slideVideo1, (slide, i) => {
+        slide.classList.remove('active-video-content');
+        slide.classList.add('active-video-content-before');
+        video1[i].classList.add('active-translate');
+        imagePerson1[i].classList.add('active-people-image');
+        video1[i].play();
+    });
+    _.map(slideVideo2, (slide, i) => {
+        slide.classList.add('active-video-content');
+        slide.classList.remove('active-video-content-before');
+        video2[i].classList.remove('active-translate');
+        imagePerson2[i].classList.remove('active-people-image');
+        video2[i].pause();
+    });
+    _.map(slideVideo3, (slide, i) => {
+        slide.classList.add('active-video-content');
+        slide.classList.remove('active-video-content-before');
+        video3[i].classList.remove('active-translate');
+        imagePerson3[i].classList.remove('active-people-image');
+        video3[i].pause();
+    });
 
     // On change windows width
 
     window.addEventListener('resize', () => {
         const widthResize = window.screen.width;
-        if (widthResize > 991) {
-            _.map(slideVideo1, (slide, i) => {
-                slide.classList.add('active-video-content');
-                slide.classList.remove('active-video-content-before');
-                video1[i].classList.remove('active-translate');
-                imagePerson1[i].classList.remove('active-people-image');
-                video1[i].pause();
-            });
-            _.map(slideVideo2, (slide, i) => {
-                slide.classList.remove('active-video-content');
-                slide.classList.add('active-video-content-before');
-                video2[i].classList.add('active-translate');
-                imagePerson2[i].classList.add('active-people-image');
-                video2[i].play();
-            });
-            _.map(slideVideo3, (slide, i) => {
-                slide.classList.add('active-video-content');
-                slide.classList.remove('active-video-content-before');
-                video3[i].classList.remove('active-translate');
-                imagePerson3[i].classList.remove('active-people-image');
-                video3[i].pause();
-            });
-        } else {
+        if (widthResize <= 991) {
             _.map(slideVideo1, (slide, i) => {
                 slide.classList.remove('active-video-content');
                 slide.classList.add('active-video-content-before');
